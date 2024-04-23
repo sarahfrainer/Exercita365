@@ -1,6 +1,11 @@
-import './App.css'
+import './App.css';
+import Router from './routers/Router';
 
 function App() {
+  <Router>
+
+    
+  </Router>
   
 }
 
