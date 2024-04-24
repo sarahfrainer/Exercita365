@@ -1,5 +1,7 @@
+import styles from "./footer.module.css"
+
 export default function Footer () {
     return (
-        <div className="footer">Criado por Sarah Frainer</div>
+        <div className={styles.footer}>Criado por Sarah Frainer</div>
     )
 }

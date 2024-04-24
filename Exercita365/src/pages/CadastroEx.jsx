@@ -1,3 +1,5 @@
-export function CadastroEx () {
-    
+export default function CadastroEx () {
+    return (
+        <div>Texto cadastro</div>
+    )
 }
