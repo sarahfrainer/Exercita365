@@ -1,0 +1,132 @@
+body {
+    background-color: rgb(236, 249, 224);
+    background-blend-mode: soft-light;
+}
+
+.formulario {
+    display: grid;
+    grid-template-areas: 
+    "titulo titulo"
+    "nlocal1 nlocal1"
+    "nlocal2 nlocal2"
+    "idusuario1 idusuario1"
+    "idusuario2 idusuario2"
+    "descricao1 descricao1"
+    "descricao2 descricao2"
+    "cep1 coordenadas1"
+    "cep2 coordenadas2"
+    "tipoesporte1 tipoesporte1"
+    "tipoesporte2 tipoDeTrilha2"
+    "cadastroContainer cadastroContainer";
+    justify-items:stretch;
+    padding: 30px;
+    align-items: center;
+    width: 600px;
+    height: 600px;
+    margin-left: 430px;
+    grid-template-columns: repeat(2, auto); 
+}
+
+#titulo {
+    grid-area: titulo;
+    margin: 30px;
+    margin-left: 0px;
+}
+
+#nlocal1 {
+    grid-area: nlocal1;
+    margin: 10px;
+}
+
+#nlocal2 {
+    grid-area: nlocal2;
+    margin: 10px;
+    padding: 5px;
+    background: none;
+}
+
+#idusuario1 {
+    grid-area: idusuario1;
+    margin: 10px;
+}
+
+#idusuario2 {
+    grid-area: idusuario2;
+    margin: 10px;
+    padding: 5px;
+    background: none;
+}
+
+#descricao1 {
+    grid-area: descricao1;
+    margin: 10px;
+}
+
+#descricao2 {
+    grid-area: descricao2;
+    margin: 10px;
+    padding: 5px;
+    background: none;
+}
+
+#cep1 {
+    grid-area: cep1;
+    margin: 10px;
+}
+
+#cep2 {
+    grid-area: cep2;
+    margin: 10px;
+    padding: 5px;
+    background: none;
+}
+
+#coordenadas1 {
+    grid-area: coordenadas1;
+    margin: 10px;
+}
+
+#coordenadas2 {
+    grid-area: coordenadas2;
+    margin: 10px;
+    padding: 5px;
+    background: none;
+}
+
+#tipoesporte1 {
+    grid-area: tipoesporte1;
+    margin: 10px;
+}
+
+#tipoesporte2 {
+    grid-area: tipoesporte2;
+    margin: 10px;
+    padding: 5px;
+    background: none;
+}
+
+#cadastro {
+    margin-right: 30px;
+    padding: 5px;
+    background-color: rgb(24, 63, 21);
+    color: white;
+    height: 30px;
+    width: 90px;
+    justify-self: start;
+}
+
+#voltar {
+    padding: 5px;
+    background: none;
+    height: 30px;
+    width: 90px;
+    justify-self: start;
+}
+
+#cadastroContainer {
+    grid-area: cadastroContainer;
+    margin: 20px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 5px;
+}
