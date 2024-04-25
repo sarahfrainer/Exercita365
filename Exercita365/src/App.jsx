@@ -5,15 +5,16 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-  <div>
-
+<div>
 <Navbar />
 
 <Outlet />
 
 <Footer />
 
-</div>  )
+</div>
+)  
 }
+
 
 export default App

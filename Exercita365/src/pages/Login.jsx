@@ -1,5 +1,5 @@
 export default function Login () {
     return (
-        <div>Texto login</div>
-    )
+    <div>Texto Login</div>
+)
 }

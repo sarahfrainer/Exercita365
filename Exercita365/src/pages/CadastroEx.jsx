@@ -1,5 +1,5 @@
 export default function CadastroEx () {
     return (
-        <div>Texto cadastro Ex</div>
+        <div>Texto cadastro</div>
     )
 }

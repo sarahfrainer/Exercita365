@@ -1,5 +1,5 @@
 export default function Listagem () {
     return (
-        <div>Texto listagem</div>
-    )
+    <div>Texto listagem</div>
+)
 }
