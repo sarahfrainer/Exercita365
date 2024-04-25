@@ -1,3 +1,5 @@
+       {
+       "users":
        [
        {
            "nome": "Kauê Pietro Cardoso",
@@ -54,4 +56,10 @@
             "endereco": "Rua da Liberdade",
             "numero": "534"
         }
-    ]
+    ],
+    "login": {
+        "success": true,
+        "message": "Login successful",
+        "token": "token_login"
+    }
+}
