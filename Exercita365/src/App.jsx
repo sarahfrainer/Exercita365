@@ -1,12 +1,15 @@
 import './App.css';
 import {Outlet} from "react-router-dom";
+import React from 'react';
+import { UserContextProvider } from "./context/UserContext.jsx"
 
 function App() {
   return (
-<div>
+    <UserContextProvider>
+
 <Outlet />
 
-</div>
+</UserContextProvider>
 )  
 }
 

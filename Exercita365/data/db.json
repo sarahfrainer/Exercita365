@@ -9,7 +9,6 @@
          "email": "kauepietrocardoso@moncoes.com.br",
          "senha": "zL0SJxw0lw",
          "cep": "37004-300",
-         "endereco": "Rua Francisca Bernardes Nogueira",
          "numero": "100"
      },
      {
@@ -20,7 +19,6 @@
          "email": "vera_ferreira@betti.com.br",
          "senha": "4phi86OBgn",
          "cep": "13098-613",
-         "endereco": "Rua Leopoldo Landin Júnior",
          "numero": "300"
      },
      {
@@ -31,7 +29,6 @@
          "email": "emanuellyeduardagalvao@predilectasorocaba.com.br",
          "senha": "dh55UmxRLo",
          "cep": "89050-340",
-         "endereco": "Rua Honduras",
          "numero": "799"
      },
      {
@@ -42,7 +39,6 @@
          "email": "gabriel.noah.costa@tedde.com.br",
          "senha": "ozE6L5luih",
          "cep": "76812-320",
-         "endereco": "Rua Walter Walterberg",
          "numero": "297"
      },
      {
@@ -53,11 +49,10 @@
          "email": "pedro-santos70@ceuazul.ind.br",
          "senha": "n9XCFEI9zW",
          "cep": "44020-593",
-         "endereco": "Rua da Liberdade",
          "numero": "534"
      }
  ],
     "listaLocais": [
-        
+
     ]
 }

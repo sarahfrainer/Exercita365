@@ -4,7 +4,8 @@ import CadastroEx from "../pages/CadastroEx";
 import Dashboard from "../pages/Dashboard";
 import Login from "../pages/Login";
 import Listagem from "../pages/Listagem";
-import App from "../App";
+import App from "../App"
+
 
 const Router = createBrowserRouter ([
     {
