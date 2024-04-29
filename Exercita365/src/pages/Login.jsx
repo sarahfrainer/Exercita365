@@ -1,24 +1,22 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import { UserContext } from '../context/UserContext';
+import { Link } from "react-router-dom";
+import styles from "./Login.module.css"
 
 export default function Login() {
 
-    const {buscarUsuario} = useContext (UserContext);
-    const [email, setEmail] = useState("");
-    const [senha, setSenha] = useState("");
+    const {login} = useContext(UserContext);
+
+    const [user, setUser] = useState({
+        email: "",
+        senha: ""
+      })
 
 
-    const handleLogin = async (e) => {
-       e.preventDefault();
-       try {
-        await buscarUsuario(email, senha);
-    } catch (error) {
-        console.error("Erro:", error.message);
-    
-    }
-};
+    async function handleLogin() {
+        await login(user.email, user.senha);
+      }    
    
-
 
     return (
         <>
@@ -28,22 +26,22 @@ export default function Login() {
 //                 <input
                     type='email'
                     id='email'
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={user.email}
+                    onChange={(e) => setUser({...user, email: e.target.value})}
                     required
         /><br />
         <label htmlFor='senha'>Senha:</label>
             <input
                     type='password'
                     id='senha'
-                    value={senha}
-                    onChange={(e) => setSenha(e.target.value)}
+                    value={user.senha}
+                    onChange={(e) => setUser({...user, senha: e.target.value})}
                     required
                 /><br />
                 <button type="submit">Login</button>
         </form>
 
-        
+        <Link to= "/" className= {styles.cadastro}>Cadastre-se</Link>
         </>
     )
 }
