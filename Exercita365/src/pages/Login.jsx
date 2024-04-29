@@ -5,7 +5,7 @@ import styles from "./Login.module.css"
 
 export default function Login() {
 
-    const {login} = useContext(UserContext);
+    const {buscarUsuario} = useContext(UserContext);
 
     const [user, setUser] = useState({
         email: "",
@@ -14,14 +14,14 @@ export default function Login() {
 
 
     async function handleLogin() {
-        await login(user.email, user.senha);
+        await buscarUsuario (user.email, user.senha);
       }    
    
 
     return (
         <>
         <h1>Faça login</h1>
-        <form onSubmit={handleLogin}>
+        <form>
 //          <label htmlFor='email'>Email:</label>
 //                 <input
                     type='email'
@@ -38,7 +38,7 @@ export default function Login() {
                     onChange={(e) => setUser({...user, senha: e.target.value})}
                     required
                 /><br />
-                <button type="submit">Login</button>
+                <button onClick={() => handleLogin()}>Login</button>
         </form>
 
         <Link to= "/" className= {styles.cadastro}>Cadastre-se</Link>

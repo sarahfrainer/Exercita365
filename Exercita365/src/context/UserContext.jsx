@@ -55,7 +55,7 @@ export const UserContextProvider = ({ children }) => {
     async function lerUsuarioPorId(id) {
         fetch("http://localhost:3000/users/" + id)
         .then(response => response.json())
-        .then(dados => setUsuario(dados))
+        .then(dados => setUser(dados))
         .catch(erro => console.log(erro))
       
     }
@@ -76,7 +76,7 @@ export const UserContextProvider = ({ children }) => {
     }
 
     return (
-        <UserContext.Provider value={{ usuario, lerUsuarios, cadastrarUsuario, lerUsuarioPorId, buscarUsuario }}>
+        <UserContext.Provider value={{ user, lerUsuarios, cadastrarUsuario, lerUsuarioPorId, buscarUsuario }}>
             {children}
         </UserContext.Provider>
     );
