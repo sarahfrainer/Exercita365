@@ -10,19 +10,56 @@ export const LocaisContextProvider = ({children}) => {
     }, []);
 
     function lerLocais() {
-        fetch("http://localhost:3000/users")
+        fetch("http://localhost:3000/locais/")
             .then(response => response.json())
-            .then(dados => setUser(dados))
+            .then(dados => setLocais(dados))
             .catch(erro => console.log(erro));
     }
 
+    function cadastrarLocal(novoLocal) {
+        fetch("http://localhost:3000/locais/", {
+            method: "POST", // cadastrar
+            body: JSON.stringify(novoLocal),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then(() => {
+                alert("Local adicionado com sucesso!");
+                lerLocais();                
+            })
+            .catch(() => alert("Erro ao adicionar o local :("));
 
-    function adicionarLocal(local) {
-        setLocais((prevLocais) => [...prevLocais, {...local, id: prevLocais.length + 1}]);
-    }
+    } 
+
+    function editarLocal(local, id){    
+        fetch("http://localhost:3000/locais/" + id, {
+          method: "PUT",
+          body: JSON.stringify(local),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+        .then(() => { 
+          alert("Local alterado com sucesso!")
+          lerLocais()
+        })
+        .catch(() => alert("Erro ao alteral local :("))
+      }
+
+      function removerLocal(id){
+        fetch("http://localhost:3000/locais/" + id, {
+          method: "DELETE",
+        })
+        .then(() => { 
+          alert("Local removido com sucesso!")
+          lerLocais()
+        })
+        .catch(() => alert("Erro ao remover local :("))
+      }
 
     return (
-        <LocaisContext.Provider value={{adicionarLocal, locais, setLocais}}>
+        <LocaisContext.Provider value={{lerLocais, locais, setLocais, cadastrarLocal, editarLocal, removerLocal}}>
             {children}
         </LocaisContext.Provider>
     )
