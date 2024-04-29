@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 export const UserContext = createContext();
 
 export const UserContextProvider = ({ children }) => {
-    const [usuarios, setUsuario] = useState([]);
+    const [user, setUser] = useState([]);
 
     useEffect(() => {
         lerUsuarios();
@@ -11,22 +11,24 @@ export const UserContextProvider = ({ children }) => {
 
     function lerUsuarios() {
         fetch("http://localhost:3000/users")
-            .then(resposta => resposta.json())
-            .then(listaUsuarios => setUsuario(listaUsuarios))
+            .then(response => response.json())
+            .then(dados => setUser(dados))
             .catch(erro => console.log(erro));
     }
 
     async function buscarUsuario(email, senha) {
         try {
-            const resposta = await fetch("http://localhost:3000/users");
-            const listaUsuarios = await resposta.json();
+            debugger
+            const response = await fetch("http://localhost:3000/users");
+            const dados = await response.json();
 
             let userVerific = false;
 
-            listaUsuarios.forEach(user => {
+            dados.map(user => {
+                debugger
                 if (user.email == email) {
                     userVerific = true;
-                }
+               
                 if (user.senha == senha) {
                     localStorage.setItem("isAutenticado", true)
                     window.location.href = "/"
@@ -35,7 +37,6 @@ export const UserContextProvider = ({ children }) => {
                     // salvo que ele está autenticado localStorage
                     // redireciona para o dashboard
                 }
-                else {
                     alert("Senha incorreta!");
                     return;
                 }
@@ -52,16 +53,15 @@ export const UserContextProvider = ({ children }) => {
     }
 
     async function lerUsuarioPorId(id) {
-        try {
-            let resultado = await fetch("http://localhost:3000/users/" + id);
-            return resultado.json();
-        } catch {
-            alert("Não foi possível localizar usuário");
-        }
+        fetch("http://localhost:3000/users/" + id)
+        .then(response => response.json())
+        .then(dados => setUsuario(dados))
+        .catch(erro => console.log(erro))
+      
     }
 
     function cadastrarUsuario(novoUsuario) {
-        fetch("http://localhost:3000/usuarios", {
+        fetch("http://localhost:3000/users/", {
             method: "POST", // cadastrar
             body: JSON.stringify(novoUsuario),
             headers: {
@@ -76,7 +76,7 @@ export const UserContextProvider = ({ children }) => {
     }
 
     return (
-        <UserContext.Provider value={{ usuarios, lerUsuarios, cadastrarUsuario, lerUsuarioPorId, buscarUsuario }}>
+        <UserContext.Provider value={{ usuario, lerUsuarios, cadastrarUsuario, lerUsuarioPorId, buscarUsuario }}>
             {children}
         </UserContext.Provider>
     );

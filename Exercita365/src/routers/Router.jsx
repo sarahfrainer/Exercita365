@@ -1,5 +1,6 @@
 import React from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
+import ReactDOM from 'react-dom/client'
 import CadastroEx from "../pages/CadastroEx";
 import Dashboard from "../pages/Dashboard";
 import Login from "../pages/Login";
@@ -7,19 +8,32 @@ import Listagem from "../pages/Listagem";
 import App from "../App"
 import CadastroUs from "../pages/CadastroUs"
 
+let isAutenticado = JSON.parse(localStorage.getItem("isAutenticado")) || false;
+
+const PrivateRoute = ({children}) => {
+    return isAutenticado ? children : <Navigate to="/login" />
+}
 
 const Router = createBrowserRouter ([
     {
+        path: "/login",
+        element: <Login />
+    },
+    {
+        path: "/cadastro",
+        element: <CadastroUs />
+
+    },
+    {
         path: "/",
-        element: <App />,
+        element: (
+        <PrivateRoute>
+        <App />
+        </PrivateRoute>),
         children: [
     {
         path: "/",
         element: <Dashboard />
-    },
-    {
-        path: "/login",
-        element: <Login />
     },
     {
         path: "/cadastro-local-exercicio",
@@ -28,12 +42,6 @@ const Router = createBrowserRouter ([
     {
         path: "/lista-locais-exercicio",
         element: <Listagem />
-
-    },
-    {
-        path: "/cadastro",
-        element: <CadastroUs />
-
     }
         ]
     }
