@@ -1,34 +1,21 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const LocaisContext = createContext()
 
 export const LocaisContextProvider = ({children}) => {
-    const [locais, setLocais] = useState ([
-        {
-            nlocal: "Trilha do macaco",
-            idusuario: "1234",
-            descricao: "Lindo lugar para fazer trilhas",
-            cep: "https://viacep.com.br/ws/88215000/json/",
-            coordenadas: "-27.17790080045851, -48.499666977182656",
-            tipoesporte: "trilha"
-        },
-        {
-            nlocal: "Praia do rosa",
-            idusuario: "1234",
-            descricao: "Belo mar, ondas calmas, perfeito para natação ao ar livre",
-            cep: "https://viacep.com.br/ws/88780-000/json/",
-            coordenadas: "-28.093553838175584, -48.63090678458072",
-            tipoesporte: "natação"
-        },
-        {
-            nlocal: "Beira-mar norte",
-            idusuario: "1234",
-            descricao: "Ótimo lugar para caminhadas e outros esportes",
-            cep: "https://viacep.com.br/ws/88015-702/json/",
-            coordenadas: "-27.56190094605664, -48.54074909040275",
-            tipoesporte: "caminhada"
-        },
-    ])
+    const [locais, setLocais] = useState ([]);
+
+    useEffect(() => {
+        lerLocais();
+    }, []);
+
+    function lerLocais() {
+        fetch("http://localhost:3000/users")
+            .then(response => response.json())
+            .then(dados => setUser(dados))
+            .catch(erro => console.log(erro));
+    }
+
 
     function adicionarLocal(local) {
         setLocais((prevLocais) => [...prevLocais, {...local, id: prevLocais.length + 1}]);
