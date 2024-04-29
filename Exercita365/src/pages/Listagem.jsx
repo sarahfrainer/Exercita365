@@ -11,6 +11,8 @@ export default function Listagem () {
   const { locais, adicionarLocal, setLocais } = useContext(LocaisContext);
 
   return (
+    <div>
+        <Navbar />
     <div className={styles.geral}>
       <div className={styles.tituloPagina}>
         <h1>Confira e edite os locais já cadastrados</h1>
@@ -34,18 +36,8 @@ export default function Listagem () {
         )
       })}
     </div>
+    <Footer />
+
+</div>
   );
-}
-
-    return (
-        <div>
-        <Navbar />
-
-        <div>Texto Listagem</div>
-
-        <Footer />
-
-    </div>
-
-)
 }

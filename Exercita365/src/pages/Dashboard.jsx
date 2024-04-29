@@ -11,6 +11,8 @@ export default function Dashboard () {
   const { locais, adicionarLocal, setLocais } = useContext(LocaisContext);
 
   return (
+    <div>
+    <Navbar />
     <div className={styles.geral}>
       <div className={styles.tituloPagina}>
         <h1>Explore locais e mantenha a saúde em dia</h1>
@@ -36,18 +38,8 @@ export default function Dashboard () {
         )
       })}
     </div>
+    <Footer />
+
+</div>
   );
-}
-
-    return (
-        <div>
-            <Navbar />
-
-            <div>Texto dashboard</div>
-
-            <Footer />
-
-        </div>
-
-    )
 }
