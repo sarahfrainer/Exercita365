@@ -5,6 +5,7 @@ import Dashboard from "../pages/Dashboard";
 import Login from "../pages/Login";
 import Listagem from "../pages/Listagem";
 import App from "../App"
+import CadastroUs from "../pages/CadastroUs"
 
 
 const Router = createBrowserRouter ([
@@ -27,6 +28,11 @@ const Router = createBrowserRouter ([
     {
         path: "/lista-locais-exercicio",
         element: <Listagem />
+
+    },
+    {
+        path: "/cadastro",
+        element: <CadastroUs />
 
     }
         ]

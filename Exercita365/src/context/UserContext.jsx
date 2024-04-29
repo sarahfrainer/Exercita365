@@ -11,8 +11,8 @@ export const UserContextProvider = ({ children }) => {
 
     function lerUsuarios() {
         fetch("http://localhost:3000/users")
-            .then(response => response.json())
-            .then(dados => setUsuario(dados))
+            .then(resposta => resposta.json())
+            .then(listaUsuarios => setUsuario(listaUsuarios))
             .catch(erro => console.log(erro));
     }
 
@@ -21,52 +21,63 @@ export const UserContextProvider = ({ children }) => {
             const resposta = await fetch("http://localhost:3000/users");
             const listaUsuarios = await resposta.json();
 
-            let userverific = false;
+            let userVerific = false;
 
             listaUsuarios.forEach(user => {
-                if (user.email === email && user.senha === senha) {
-                    userverific = true;
+                if (user.email == email) {
+                    userVerific = true;
+                }
+                if (user.senha == senha) {
+                    localStorage.setItem("isAutenticado", true)
+                    window.location.href = "/"
+                    return
                     // salvo id no localStorage
                     // salvo que ele está autenticado localStorage
                     // redireciona para o dashboard
                 }
+                else {
+                    alert("Senha incorreta!");
+                    return;
+                }
             });
 
-            if (!userverific) {
-                throw new Error("Usuário não cadastrado");
-            }
-        } catch (error) {
-            alert(error.message);
-        }
 
-        async function lerUsuarioPorId(id) {
-            try {
-                let resultado = await fetch("http://localhost:3000/users/" + id);
-                return resultado.json();
-            } catch {
-                alert("Não foi possível localizar usuário");
+            if (!userVerific) {
+                alert("Esse e-mail não está cadastrado!")
             }
         }
+        catch {
 
-        function cadastrarUsuario(novoUsuario) {
-            fetch("http://localhost:3000/usuarios", {
-                method: "POST", // cadastrar
-                body: JSON.stringify(novoUsuario),
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            })
-                .then(() => {
-                    alert("Usuario adicionado com sucesso!");
-                    lerUsuarios();
-                })
-                .catch(() => alert("Erro ao adicionar o usuário!"));
         }
-
-        return (
-            <UserContext.Provider value={{ usuarios, cadastrarUsuario, lerUsuarioPorId, buscarUsuario }}>
-                {children}
-            </UserContext.Provider>
-        );
     }
-};
+
+    async function lerUsuarioPorId(id) {
+        try {
+            let resultado = await fetch("http://localhost:3000/users/" + id);
+            return resultado.json();
+        } catch {
+            alert("Não foi possível localizar usuário");
+        }
+    }
+
+    function cadastrarUsuario(novoUsuario) {
+        fetch("http://localhost:3000/usuarios", {
+            method: "POST", // cadastrar
+            body: JSON.stringify(novoUsuario),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then(() => {
+                alert("Usuario adicionado com sucesso!");
+                lerUsuarios();
+            })
+            .catch(() => alert("Erro ao adicionar o usuário!"));
+    }
+
+    return (
+        <UserContext.Provider value={{ usuarios, cadastrarUsuario, lerUsuarioPorId, buscarUsuario }}>
+            {children}
+        </UserContext.Provider>
+    );
+}
