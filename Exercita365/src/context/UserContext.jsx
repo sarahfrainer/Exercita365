@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 
 export const UserContext = createContext();
 
@@ -70,10 +71,13 @@ export const UserContextProvider = ({ children }) => {
         })
             .then(() => {
                 alert("Usuario adicionado com sucesso!");
-                lerUsuarios();
+                lerUsuarios();                
             })
             .catch(() => alert("Erro ao adicionar o usuário!"));
+
     }
+
+
 
     return (
         <UserContext.Provider value={{ user, lerUsuarios, cadastrarUsuario, lerUsuarioPorId, buscarUsuario }}>

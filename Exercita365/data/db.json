@@ -1,58 +1,163 @@
 {
-    "users":
-    [
+  "users": [
     {
-        "nome": "Kauê Pietro Cardoso",
-         "sexo": "masculino",
-         "cpf": "724.794.583-42",
-         "nascimento": "15/01/1982",
-         "email": "kaue@email.com",
-         "senha": "1234",
-         "cep": "37004-300",
-         "numero": "100"
-     },
-     {
-         "nome": "Vera Renata Ferreira",
-         "sexo": "feminino",
-         "cpf": "855.484.132-87",
-         "nascimento": "10/04/2006",
-         "email": "vera_ferreira@betti.com.br",
-         "senha": "4phi86OBgn",
-         "cep": "13098-613",
-         "numero": "300"
-     },
-     {
-         "nome": "Emanuelly Eduarda Galvão",
-         "sexo": "feminino",
-         "cpf": "684.295.236-00",
-         "nascimento": "27/02/2003",
-         "email": "emanuellyeduardagalvao@predilectasorocaba.com.br",
-         "senha": "dh55UmxRLo",
-         "cep": "89050-340",
-         "numero": "799"
-     },
-     {
-         "nome": "Gabriel Noah Costa",
-         "sexo": "masculino",
-         "cpf": "830.404.119-77",
-         "nascimento": "13/02/1989",
-         "email": "gabriel.noah.costa@tedde.com.br",
-         "senha": "ozE6L5luih",
-         "cep": "76812-320",
-         "numero": "297"
-     },
-     {
-         "nome": "Pedro Henrique Marcos Vinicius Santos",
-         "sexo": "masculino",
-         "cpf": "659.346.052-40",
-         "nascimento": "25/03/1988",
-         "email": "pedro-santos70@ceuazul.ind.br",
-         "senha": "n9XCFEI9zW",
-         "cep": "44020-593",
-         "numero": "534"
-     }
- ],
-    "listaLocais": [
-
-    ]
+      "nome": "Kauê Pietro Cardoso",
+      "sexo": "masculino",
+      "cpf": "724.794.583-42",
+      "nascimento": "15/01/1982",
+      "email": "kaue@email.com",
+      "senha": "1234",
+      "cep": "37004-300",
+      "numero": "100"
+    },
+    {
+      "nome": "Vera Renata Ferreira",
+      "sexo": "feminino",
+      "cpf": "855.484.132-87",
+      "nascimento": "10/04/2006",
+      "email": "vera_ferreira@betti.com.br",
+      "senha": "4phi86OBgn",
+      "cep": "13098-613",
+      "numero": "300"
+    },
+    {
+      "nome": "Emanuelly Eduarda Galvão",
+      "sexo": "feminino",
+      "cpf": "684.295.236-00",
+      "nascimento": "27/02/2003",
+      "email": "emanuellyeduardagalvao@predilectasorocaba.com.br",
+      "senha": "dh55UmxRLo",
+      "cep": "89050-340",
+      "numero": "799"
+    },
+    {
+      "nome": "Gabriel Noah Costa",
+      "sexo": "masculino",
+      "cpf": "830.404.119-77",
+      "nascimento": "13/02/1989",
+      "email": "gabriel.noah.costa@tedde.com.br",
+      "senha": "ozE6L5luih",
+      "cep": "76812-320",
+      "numero": "297"
+    },
+    {
+      "nome": "Pedro Henrique Marcos Vinicius Santos",
+      "sexo": "masculino",
+      "cpf": "659.346.052-40",
+      "nascimento": "25/03/1988",
+      "email": "pedro-santos70@ceuazul.ind.br",
+      "senha": "n9XCFEI9zW",
+      "cep": "44020-593",
+      "numero": "534"
+    },
+    {
+      "id": "f231",
+      "nome": "Sarah",
+      "sexo": "",
+      "cpf": "11111111",
+      "nascimento": "21-08-2000",
+      "email": "sarah@email.com",
+      "senha": "12345",
+      "cep": "03099010",
+      "numero": "rua fulana, n 10"
+    },
+    {
+      "id": "3299",
+      "nome": "Fulana de tal",
+      "sexo": "",
+      "cpf": "2222",
+      "nascimento": "22-02-2000",
+      "email": "fulana@email.com",
+      "senha": "4567",
+      "cep": "88091",
+      "numero": "Rua ciclana, n 30"
+    },
+    {
+      "id": "be64",
+      "nome": "Marcos Andrade",
+      "sexo": "masculino",
+      "cpf": "77777",
+      "nascimento": "18-07-1998",
+      "email": "marcos@email.com",
+      "senha": "senha",
+      "cep": "23498",
+      "numero": "Rua das flores, n 60"
+    },
+    {
+      "id": "fe64",
+      "nome": "Ligia Fagundes",
+      "sexo": "",
+      "cpf": "99980",
+      "nascimento": "04-04-2004",
+      "email": "ligia@email.com",
+      "senha": "senha2",
+      "cep": "8880910",
+      "numero": "rua limbo, n 40"
+    },
+    {
+      "id": "7f29",
+      "nome": "Machado de Assis",
+      "sexo": "masculino",
+      "cpf": "88097560",
+      "nascimento": "03-04-1888",
+      "email": "machado@email.com",
+      "senha": "capitu",
+      "cep": "8809760",
+      "numero": "rua Kimberly, n 30"
+    },
+    {
+      "id": "4b7b",
+      "nome": "Fulana de tal",
+      "sexo": "",
+      "cpf": "70920",
+      "nascimento": "20-06-70",
+      "email": "teste@email.com",
+      "senha": "teste",
+      "cep": "88901830",
+      "numero": "rua teste, n 1"
+    },
+    {
+      "id": "560a",
+      "nome": "Preta Frainer",
+      "sexo": "",
+      "cpf": "0000001",
+      "nascimento": "01-02-2015",
+      "email": "pretinha@email.com",
+      "senha": "pretalovers",
+      "cep": "0888960",
+      "numero": "rua do amor, n 40"
+    },
+    {
+      "id": "f2e8",
+      "nome": "Preta Frainer",
+      "sexo": "",
+      "cpf": "0000001",
+      "nascimento": "01-02-2015",
+      "email": "pretinha@email.com",
+      "senha": "pretalovers",
+      "cep": "0888960",
+      "numero": "rua do amor, n 40"
+    },
+    {
+      "id": "9893"
+    },
+    {
+      "id": "b2b0",
+      "novoUsuario": {
+        "nome": "Preta Frainer"
+      }
+    },
+    {
+      "id": "5713",
+      "nome": "Preta Frainer",
+      "sexo": "feminino",
+      "cpf": "18292891",
+      "nascimento": "12u8u2",
+      "email": "ahsuhs@aushus.com",
+      "senha": "haushu",
+      "cep": "ahsuhsuah",
+      "numero": "ahsuhusa"
+    }
+  ],
+  "listaLocais": []
 }

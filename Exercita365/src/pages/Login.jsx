@@ -41,7 +41,8 @@ export default function Login() {
                 <button onClick={() => handleLogin()}>Login</button>
         </form>
 
-        <Link to= "/" className= {styles.cadastro}>Cadastre-se</Link>
+        <p>Não tem uma conta?</p>
+        <Link to= "/cadastro" className= {styles.cadastro}>Cadastre-se</Link>
         </>
     )
 }
