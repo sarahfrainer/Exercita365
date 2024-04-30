@@ -42,6 +42,7 @@ export const UserContextProvider = ({ children }) => {
                     return;
                 }
             });
+            
 
 
             if (!userVerific) {
@@ -52,6 +53,12 @@ export const UserContextProvider = ({ children }) => {
 
         }
     }
+
+  
+        function deslog () {
+            localStorage.removeItem("isAutenticado")
+            window.location.href = "/login"
+        }
 
     async function lerUsuarioPorId(id) {
         fetch("http://localhost:3000/users/" + id)
@@ -80,7 +87,7 @@ export const UserContextProvider = ({ children }) => {
 
 
     return (
-        <UserContext.Provider value={{ user, lerUsuarios, cadastrarUsuario, lerUsuarioPorId, buscarUsuario }}>
+        <UserContext.Provider value={{ user, lerUsuarios, cadastrarUsuario, lerUsuarioPorId, buscarUsuario, deslog}}>
             {children}
         </UserContext.Provider>
     );
