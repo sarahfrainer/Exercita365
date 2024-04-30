@@ -12,7 +12,7 @@ export default function Cadastro() {
         reset
     } = useForm();
 
-    const { cadastrarUsuario } = useContext(UserContext)
+    const { cadastrarUsuario, lerUsuarios } = useContext(UserContext)
 
     const [novoUsuario, setNovoUsuario] = useState({
         nome: "",
@@ -26,10 +26,23 @@ export default function Cadastro() {
     })
 
     function onSubmit(formValue) {
-        cadastrarUsuario(formValue);
-        reset();
-
-    }
+        fetch(`http://localhost:3000/users`)
+            .then(response => response.json())
+            .then(users => {
+                const isDuplicate = users.some(user => {
+                    return (
+                        user.cpf === formValue.cpf
+                    );
+                });
+    
+                if (!isDuplicate) {
+                    cadastrarUsuario(formValue);
+                    reset();
+                } else {
+                    alert("Esse cpf já está cadastrado!");
+                }
+            })
+            .catch(error => console.error("Erro:", error));}
 
     return (
         <>

@@ -26,7 +26,7 @@ export default function Dashboard () {
               <div className={styles.container}>
                 <div className={styles.texto}>
                   <h1 className={styles.nlocal}>{local.nlocal}</h1>
-                  <h3 className={styles.idusuario}>Por: {local.idusuario}</h3>
+                  <h3 className={styles.idusuario}>Id usuário: {local.idusuario}</h3>
                   <p className={styles.descricao}>Descrição: {local.descricao}</p>
                   <p className={styles.cep}>CEP: {local.cep}</p>
                   <p className={styles.coordenadas}>Coordenadas: {local.coordenadas}</p>
