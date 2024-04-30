@@ -5,6 +5,7 @@ import { LocaisContext } from "../context/LocaisContext";
 import { useContext } from "react";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { useEffect } from "react";
 
 
 function CadastroEx() {
@@ -16,13 +17,17 @@ function CadastroEx() {
         reset
     } = useForm();
 
-    const { lerLocais, locais, setLocais, cadastrarLocal, editarLocal, removerLocal, lerLocaisPorId } = useContext(LocaisContext);
+    const { lerLocais, locais, setLocais, cadastrarLocal, editarLocal, removerLocal, lerLocaisPorId, preencherForm} = useContext(LocaisContext);
 
     function onSubmit(formValue) {
         console.log("Valores do formulario", formValue);
         cadastrarLocal(formValue);
         reset();
     }
+
+
+
+
 
     console.log(errors);
 
@@ -165,7 +170,7 @@ function CadastroEx() {
 
                 <div id={styles.cadastroContainer}>
                     <input className={styles.cadastro} id={styles.cadastro} type="submit" value="Cadastrar"></input>
-                    <button id={styles.voltar} className={styles.voltar}>Voltar</button>
+                    <button onClick={() => editarLocal(local.id)}>Editar local</button>
                 </div>
 
             </form>

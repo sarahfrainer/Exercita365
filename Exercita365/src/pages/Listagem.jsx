@@ -9,7 +9,9 @@ import Footer from '../components/Footer';
 
 export default function Listagem () {
 
-  const { lerLocais, locais, setLocais, novoLocal, editarLocal, removerLocal } = useContext(LocaisContext);
+  const { lerLocais, locais, setLocais, novoLocal, editarLocal, removerLocal, preencherForm } = useContext(LocaisContext);
+
+ 
 
   const handleDelete = (id) => {
     removerLocal(id);
@@ -36,7 +38,7 @@ export default function Listagem () {
                   <div className={styles.tipoesporte}>Tipo de esporte: {local.tipoesporte}</div>
                 </div>
               </div>
-              <Link to= "/cadastro-local-exercicio" className= {styles.login}>Editar local</Link>
+              <Link to= {`/cadastro-local-exercicio?id=${local.id}`} className= {styles.login}>Editar local</Link>
               <button onClick={() => handleDelete(local.id)}>Exclua local</button>
             </CardContent>
           </Card>
