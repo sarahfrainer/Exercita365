@@ -10,16 +10,24 @@ export const LocaisContextProvider = ({children}) => {
     }, []);
 
     function lerLocais() {
-        fetch("http://localhost:3000/locais/")
+        fetch("http://localhost:3000/locais")
             .then(response => response.json())
             .then(dados => setLocais(dados))
             .catch(erro => console.log(erro));
     }
 
-    function cadastrarLocal(novoLocal) {
-        fetch("http://localhost:3000/locais/", {
+    function lerLocaisPorId(id){
+      fetch("http://localhost:3000/locais/" + id)
+      .then(response => response.json())
+      .then(dados => setLocais(dados))
+      .catch(erro => console.log(erro))
+    }
+  
+
+    function cadastrarLocal(local) {
+        fetch("http://localhost:3000/locais", {
             method: "POST", // cadastrar
-            body: JSON.stringify(novoLocal),
+            body: JSON.stringify(local),
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -59,7 +67,7 @@ export const LocaisContextProvider = ({children}) => {
       }
 
     return (
-        <LocaisContext.Provider value={{lerLocais, locais, setLocais, cadastrarLocal, editarLocal, removerLocal}}>
+        <LocaisContext.Provider value={{lerLocais, locais, setLocais, cadastrarLocal, editarLocal, removerLocal, lerLocaisPorId}}>
             {children}
         </LocaisContext.Provider>
     )

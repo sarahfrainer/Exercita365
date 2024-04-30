@@ -11,10 +11,12 @@ function CadastroEx() {
     const { register,
         handleSubmit,
         formState: { errors },
+        setValue, 
+        getValues,
         reset
     } = useForm();
 
-    const { cadastrarLocal } = useContext(LocaisContext);
+    const { lerLocais, locais, setLocais, cadastrarLocal, editarLocal, removerLocal, lerLocaisPorId } = useContext(LocaisContext);
 
     function onSubmit(formValue) {
         console.log("Valores do formulario", formValue);
@@ -27,20 +29,20 @@ function CadastroEx() {
     const buscarCep = () => {
         debugger
         let cep = getValues('cep')
-    
-        if(!!cep && cep.length == 8){
-          fetch(`https://viacep.com.br/ws/${cep}/json/`)
-          .then((res) => res.json())
-          .then(dados => {
-            debugger
-            setValue('bairro', dados.bairro)
-            setValue('logradouro', dados.logradouro)
-            setValue('estado', dados.uf)
-            setValue('cidade', dados.localidade)
-          })
-          .catch(error => console.log(error))
+
+        if (!!cep && cep.length == 8) {
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                .then((res) => res.json())
+                .then(dados => {
+                    debugger
+                    setValue('bairro', dados.bairro)
+                    setValue('logradouro', dados.logradouro)
+                    setValue('estado', dados.uf)
+                    setValue('localidade', dados.localidade)
+                })
+                .catch(error => console.log(error))
         }
-      }
+    }
 
     return (
         <div>
@@ -93,7 +95,7 @@ function CadastroEx() {
                     <label htmlFor="cep" id={styles.cep1}>CEP do local:</label> <br />
                     <input type="text" className={styles.cep2} id={styles.cep2}
                         {...register("cep", {
-                            required: "por favor, insira o cep", 
+                            required: "por favor, insira o cep",
                             onBlur: () => buscarCep(),
                             maxLength: {
                                 value: 8,
@@ -108,6 +110,32 @@ function CadastroEx() {
 
                     {errors.cep && <p>{errors.cep.message}</p>}
                 </div>
+
+                <div>
+                <label htmlFor="logradouro" id={styles.logradouro1}>Logradouro:</label> <br />
+                <input type="text" className={styles.logradouro2} id={styles.logradouro2} placeholder="digite o logradouro" 
+                {...register("logradouro")} /><br />
+                
+                </div>
+
+                <div>
+                <label htmlFor="bairro" id={styles.bairro1}>Bairro:</label> <br />
+                <input type="text" className={styles.bairro2} id={styles.bairro2} placeholder="digite o bairro" 
+                {...register("bairro")} /><br />
+                </div>
+
+                <div>
+                <label htmlFor="localidade" id={styles.localidade1}>Localidade:</label> <br />
+                <input type="text" className={styles.localidade2} id={styles.localidade2} placeholder="digite a localidade" 
+                {...register("localidade")} /><br />
+                </div>
+
+                <div>
+                <label htmlFor="estado" id={styles.estado1}>Estado:</label> <br />
+                <input type="text" className={styles.estado2} id={styles.estado2} placeholder="digite o estado" 
+                {...register("estado")} /><br />
+                </div>
+
 
                 <div>
                     <label htmlFor="coordenadas" id={styles.coordenadas1}>Coordenadas (longitude e latitude):</label> <br />
