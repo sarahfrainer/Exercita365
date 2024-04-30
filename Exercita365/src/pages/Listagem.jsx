@@ -2,6 +2,7 @@ import { Card, CardActions, CardContent, CardHeader } from "@mui/material";
 import { LocaisContext } from "../context/LocaisContext";
 import { useContext } from "react";
 import styles from "./Listagem.module.css"
+import { Link } from "react-router-dom";
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -9,6 +10,10 @@ import Footer from '../components/Footer';
 export default function Listagem () {
 
   const { lerLocais, locais, setLocais, novoLocal, editarLocal, removerLocal } = useContext(LocaisContext);
+
+  const handleDelete = (id) => {
+    removerLocal(id);
+  };
 
   return (
     <div>
@@ -24,7 +29,7 @@ export default function Listagem () {
               <div className={styles.container}>
                 <div className={styles.texto}>
                   <h1 className={styles.nlocal}>{local.nlocal}</h1>
-                  <h3 className={styles.idusuario}>Por: {local.idusuario}</h3>
+                  <h3 className={styles.idusuario}>Id usuário: {local.idusuario}</h3>
                   <p className={styles.descricao}>Descrição: {local.descricao}</p>
                   <p className={styles.cep}>CEP: {local.cep}</p>
                   <p className={styles.coordenadas}>Coordenadas: {local.coordenadas}</p>
@@ -32,7 +37,7 @@ export default function Listagem () {
                 </div>
               </div>
               <Link to= "/cadastro-local-exercicio" className= {styles.login}>Editar local</Link>
-              <button onclick={() => removerLocal()}>Exclua local</button>
+              <button onClick={() => handleDelete(local.id)}>Exclua local</button>
             </CardContent>
           </Card>
         )
