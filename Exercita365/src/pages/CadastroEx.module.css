@@ -1,7 +1,19 @@
 body {
-    background-color: rgb(236, 249, 224);
-    background-blend-mode: soft-light;
-}
+    background: linear-gradient(45deg, #1A4D2E, #4F6F52, #E8DFCA, #F5EFE6);
+    animation: colors 10s ease infinite alternate;
+  }
+
+  @keyframes colors {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+  }
 
 .formulario {
     display: grid;
@@ -15,6 +27,10 @@ body {
     "descricao2 descricao2"
     "cep1 coordenadas1"
     "cep2 coordenadas2"
+    "logradouro1 bairro1"
+    "logradouro2 bairro2"
+    "localidade1 estado1"
+    "localidade2 estado2"
     "tipoesporte1 tipoesporte1"
     "tipoesporte2 tipoDeTrilha2"
     "cadastroContainer cadastroContainer";
@@ -22,7 +38,7 @@ body {
     padding: 30px;
     align-items: center;
     width: 600px;
-    height: 600px;
+    height: 650px;
     margin-left: 430px;
     grid-template-columns: repeat(2, auto); 
 }
@@ -81,6 +97,54 @@ body {
     background: none;
 }
 
+#logradouro1 {
+    grid-area: logradouro1;
+    margin: 10px;
+}
+
+#logradouro2 {
+    grid-area: logradouro2;
+    margin: 10px;
+    padding: 5px;
+    background: none;
+}
+
+#bairro1 {
+    grid-area: bairro1;
+    margin: 10px;
+}
+
+#bairro2 {
+    grid-area: bairro2;
+    margin: 10px;
+    padding: 5px;
+    background: none;
+}
+
+#localidade1 {
+    grid-area: localidade1;
+    margin: 10px;
+}
+
+#localidade2 {
+    grid-area: localidade2;
+    margin: 10px;
+    padding: 5px;
+    background: none;
+}
+
+#estado1 {
+    grid-area: estado1;
+    margin: 10px;
+}
+
+#estado2 {
+    grid-area: estado2;
+    margin: 10px;
+    padding: 5px;
+    background: none;
+}
+
 #coordenadas1 {
     grid-area: coordenadas1;
     margin: 10px;
@@ -125,8 +189,14 @@ body {
 
 #cadastroContainer {
     grid-area: cadastroContainer;
-    margin: 20px;
+    margin: 0px;
     display: flex;
     justify-content: flex-start;
     margin-left: 5px;
+    margin-bottom: 100px;
+}
+
+#cadastro:hover {
+    text-decoration: underline;
+    cursor:pointer;
 }

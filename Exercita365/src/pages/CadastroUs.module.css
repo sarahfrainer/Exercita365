@@ -1,1 +1,17 @@
+.formulario {
+    background: linear-gradient(45deg, #1A4D2E, #4F6F52, #E8DFCA, #F5EFE6);
+    animation: colors 10s ease infinite alternate;
+  }
+
+  @keyframes colors {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+  }
 

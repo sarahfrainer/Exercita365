@@ -165,7 +165,6 @@ function CadastroEx() {
 
                 <div id={styles.cadastroContainer}>
                     <input className={styles.cadastro} id={styles.cadastro} type="submit" value="Cadastrar"></input>
-                    <button id={styles.voltar} className={styles.voltar}>Voltar</button>
                 </div>
 
             </form>
