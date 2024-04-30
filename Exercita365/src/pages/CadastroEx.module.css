@@ -1,6 +1,7 @@
 body {
     background-color: rgb(236, 249, 224);
     background-blend-mode: soft-light;
+    font-family: "Roboto", sans-serif;
 }
 
 .formulario {

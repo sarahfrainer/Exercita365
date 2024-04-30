@@ -5,6 +5,9 @@
     justify-items:center;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin: 0px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
 }
 
 .GuiaDashboard, .GuiaLogin, .GuiaCadastro, .GuiaLocais {
@@ -13,4 +16,25 @@
     color: white;
     margin-left: 50px;
     margin-right: 50px;
+}
+
+.Sair {
+    margin: 5px;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    border-radius: 15px;
+    margin-right: 50px;
+    margin-left: 50px;
+
+}
+
+.Sair:hover {
+   color:rgb(219, 24, 24);
+   text-decoration: underline;
+   cursor:pointer;
+  }
+
+.GuiaDashboard:hover, .GuiaLogin:hover, .GuiaCadastro:hover, .GuiaLocais:hover {
+    text-decoration: underline;
 }
