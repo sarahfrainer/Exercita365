@@ -1,0 +1,72 @@
+.geral {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    
+  }
+  
+  .tituloPagina {
+    margin: 20px;
+    color:rgb(2, 41, 0);
+  }
+  
+  
+  .container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content:left;
+    flex-wrap: wrap;
+    font-size: 12px;
+    margin: 20px 0px 20px 0px;
+  
+  }
+  
+  
+  .texto {
+    display: flex;
+    flex-direction: column;
+    box-shadow: .2em .2em .8em black;
+    width: 600px;
+    height: 250px;
+  }
+  
+  
+  
+  .nlocal, .idusuario, .descricao, .cep, .coordenadas, .tipoesporte {
+    margin: 10px;
+  }
+  
+  .nlocal {
+    justify-self: center;
+    align-self: center;
+    font-size: 12px;
+    color:rgb(2, 41, 0);
+  }
+  
+  
+  .idusuario {
+    align-self: self-end;
+    color:rgb(2, 41, 0);
+  }
+  
+  .descricao {
+    align-self: self-start;
+    color: grey;
+  }
+  
+  
+  .cep {
+    align-self: self-start;
+    color: grey;
+  }
+  
+  .coordenadas {
+    align-self: self-start;
+  }
+  
+  
+  .tipoesporte {
+    align-self: self-start;
+  }
