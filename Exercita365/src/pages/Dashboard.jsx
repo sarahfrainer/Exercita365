@@ -17,8 +17,12 @@ export default function Dashboard () {
       <div className={styles.tituloPagina}>
         <h1>Explore locais e mantenha a saúde em dia</h1>
       </div>
+      <div className={styles.paragrafo1}>
       <p>Explore locais cadastrados, envie as suas próprias sugestões e se exercite!</p>
+      </div>
+      <div className={styles.paragrafo2}>
       <p>Confira os locais já cadastrados:</p>
+      </div>
       {locais.map((local, index) => {
         return (
           <Card key={index}>
