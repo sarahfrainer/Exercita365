@@ -68,9 +68,10 @@ export default function Cadastro() {
     return (
         <div className={styles.container} >
             <form className={styles.formulario} onSubmit={handleSubmit((onSubmit))}>
-                <h1 className={styles.titulo}>Faça seu cadastro</h1>
+                <h1 className={styles.titulo}>Cadastro</h1>
 
                 <div className={styles.form}>
+                <div className={styles.form1}>
                     <div>
                     <label htmlFor="nome" className={styles.nome}>Nome completo:</label> <br />
                     <input
@@ -191,8 +192,11 @@ export default function Cadastro() {
                     <br />
                 </div>
 
+                </div>
+
+                <div className={styles.form2}>
                 <div>
-                    <label htmlFor="cep" className={styles.cep}>CEP:</label> <br />
+                    <label htmlFor="cep" className={styles.cep} id={styles.cep2}>CEP:</label> <br />
                     <input
                         type="text"
                         id={styles.cep}
@@ -214,8 +218,8 @@ export default function Cadastro() {
                 </div>
 
                 <div>
-                <label htmlFor="logradouro" id={styles.logradouro1}>Logradouro:</label> <br />
-                <input type="text" className={styles.logradouro2} id={styles.logradouro2} placeholder="digite o logradouro" 
+                <label htmlFor="logradouro" id={styles.logradouro1} className={styles.logradouro}>Logradouro:</label> <br />
+                <input type="text" className={styles.logradouro} id={styles.logradouro2} placeholder="digite o logradouro" 
                 {...register("logradouro")}
                 onChange={(evento) => setNovoUsuario({ ...novoUsuario, logradouro: evento.target.value })}
                  /><br />
@@ -223,31 +227,31 @@ export default function Cadastro() {
                 </div>
 
                 <div>
-                <label htmlFor="bairro" id={styles.bairro1}>Bairro:</label> <br />
-                <input type="text" className={styles.bairro2} id={styles.bairro2} placeholder="digite o bairro" 
+                <label htmlFor="bairro" id={styles.bairro1} className={styles.bairro}>Bairro:</label> <br />
+                <input type="text" className={styles.bairro} id={styles.bairro2} placeholder="digite o bairro" 
                 {...register("bairro")} 
                 onChange={(evento) => setNovoUsuario({ ...novoUsuario, bairro: evento.target.value })}
                 /> <br />
                 </div>
 
                 <div>
-                <label htmlFor="localidade" id={styles.localidade1}>Localidade:</label> <br />
-                <input type="text" className={styles.localidade2} id={styles.localidade2} placeholder="digite a localidade" 
+                <label htmlFor="localidade" id={styles.localidade1} className={styles.localidade}>Localidade:</label> <br />
+                <input type="text" className={styles.localidade} id={styles.localidade2} placeholder="digite a localidade" 
                 {...register("localidade")}
                 onChange={(evento) => setNovoUsuario({ ...novoUsuario, localidade: evento.target.value })}
                  /> <br />
                 </div>
 
                 <div>
-                <label htmlFor="estado" id={styles.estado1}>Estado:</label> <br />
-                <input type="text" className={styles.estado2} id={styles.estado2} placeholder="digite o estado" 
+                <label htmlFor="estado" id={styles.estado1} className={styles.estado}>Estado:</label> <br />
+                <input type="text" className={styles.estado} id={styles.estado2} placeholder="digite o estado" 
                 {...register("estado")} 
                 onChange={(evento) => setNovoUsuario({ ...novoUsuario, estado: evento.target.value })}
                 /><br />
                 </div>
 
                 <div>
-                    <label htmlFor="numero" id={styles.numero}>Número da residência e complemento:</label> <br />
+                    <label htmlFor="numero" className={styles.numero}>Complemento:</label> <br />
                     <input
                         type="text"
                         id={styles.numero}
@@ -265,14 +269,18 @@ export default function Cadastro() {
                     {errors.numero && <p>{errors.numero.message}</p>}
                     <br />
                 </div>
+                </div>
 
-                <button type="submit" className={styles.cadastrar}>Cadastrar</button>
+               
                 <hr />
                 </div>
+                <div className={styles.bt}>
+                <button type="submit" className={styles.cadastrar}>Cadastrar</button>
+                <Link to="/Login" className={styles.login}>Login</Link>
+            </div>
             </form>
 
-            <Link to="/Login" className={styles.login}>Login</Link>
-
+           
         </div>
     )
 }

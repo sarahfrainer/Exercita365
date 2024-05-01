@@ -4,7 +4,7 @@ body {
     animation: colors 10s ease infinite alternate;
     background-size: cover;
   background-repeat: no-repeat;
-  min-height: 550px;
+  min-height: 400px;
 }
 
 @keyframes colors {
