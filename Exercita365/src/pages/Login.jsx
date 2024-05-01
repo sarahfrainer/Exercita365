@@ -19,90 +19,34 @@ export default function Login() {
    
 
     return (
-        <>
-        <h1>Faça login</h1>
-        <form>
-//          <label htmlFor='email'>Email:</label>
-//                 <input
+        <div className={styles.container}>
+        <h1 className={styles.titulo1}>Faça login,</h1>
+        <h2 className={styles.titulo2}>descubra lugares incríveis</h2>
+        <form className={styles.form}>
+          <label htmlFor='email' className={styles.email}>Email: <br /></label>
+                 <input
                     type='email'
                     id='email'
+                    className={styles.email}
                     value={user.email}
                     onChange={(e) => setUser({...user, email: e.target.value})}
                     required
+                    placeholder='digite seu e-mail'
         /><br />
-        <label htmlFor='senha'>Senha:</label>
+        <label htmlFor='senha' className={styles.senha}>Senha: <br /></label>
             <input
                     type='password'
                     id='senha'
+                    className={styles.senha}
                     value={user.senha}
                     onChange={(e) => setUser({...user, senha: e.target.value})}
                     required
+                    placeholder='digite sua senha'
                 /><br />
-                <button onClick={() => handleLogin()}>Login</button>
+                <button onClick={() => handleLogin()} className={styles.login}>Login</button>
         </form>
 
-        <p>Não tem uma conta?</p>
+        <p className={styles.paragrafo}>Não tem uma conta?</p>
         <Link to= "/cadastro" className= {styles.cadastro}>Cadastre-se</Link>
-        </>
-    )
-}
-
-//     const [usuario, setUsuario] = useState('');
-//     const [senha, setSenha] = useState('');
-//     const [erro, setErro] = useState('');
-//     const history = useHistory();
-
-//     const handleLogin = async (e) => {
-//         e.preventDefault();
-
-//         try {
-//             const resposta = await fetch('http://localhost:3000/users', {
-//                 method: 'POST',
-//                 headers: {
-//                     'Content-Type': 'application/json'
-//                 },
-//                 body: JSON.stringify({ usuario, senha })
-//             });
-
-//             if (!resposta.ok) {
-//                 throw new Error("Login falhou");
-//             }
-
-//             const resultado = await resposta.json();
-//             console.log("Login funcionou:", resultado);
-//             history.push('/dashboard');
-            
-//         } catch (error) {
-//             console.error("Erro:", error.message);
-//             setErro("Não foi possível realizar o login");
-//         }
-//     };
-
-//     return (
-//         <div>
-//             <h1>Login</h1>
-//             {erro && <p style={{ color: 'red' }}>{erro}</p>}
-//             <form onSubmit={handleLogin}>
-//                 <label htmlFor='usuario'>Usuário:</label>
-//                 <input
-//                     type='text'
-//                     id='usuario'
-//                     name='usuario'
-//                     value={usuario}
-//                     onChange={(e) => setUsuario(e.target.value)}
-//                     required
-//                 /><br />
-//                 <label htmlFor='senha'>Senha:</label>
-//                 <input
-//                     type='password'
-//                     id='senha'
-//                     name='senha'
-//                     value={senha}
-//                     onChange={(e) => setSenha(e.target.value)}
-//                     required
-//                 /><br />
-//                 <button type="submit">Login</button>
-//             </form>
-//         </div>
-//     );
-// }
+        </div>
+    )}
