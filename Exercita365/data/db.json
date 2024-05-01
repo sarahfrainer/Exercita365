@@ -8,8 +8,11 @@
       "email": "kaue@email.com",
       "senha": "1234",
       "cep": "37004-300",
-      "numero": "100",
-      "id": "19b4"
+      "logradouro": "Rua Francisca Bernardes Nogueira",
+      "bairro": "Vila Belmiro",
+      "localidade": "Varginha",
+      "estado": "MG",
+      "numero": "100"
     },
     {
       "nome": "Vera Renata Ferreira",
@@ -19,8 +22,11 @@
       "email": "vera_ferreira@betti.com.br",
       "senha": "4phi86OBgn",
       "cep": "13098-613",
-      "numero": "300",
-      "id": "bf32"
+      "logradouro": "Rua Leopoldo Landin Júnior",
+      "bairro": "Parque Xangrilá",
+      "localidade": "Campinas",
+      "estado": "SP",
+      "numero": "300"
     },
     {
       "nome": "Emanuelly Eduarda Galvão",
@@ -30,8 +36,11 @@
       "email": "emanuellyeduardagalvao@predilectasorocaba.com.br",
       "senha": "dh55UmxRLo",
       "cep": "89050-340",
-      "numero": "799",
-      "id": "c9ee"
+      "logradouro": "Rua Honduras",
+      "bairro": "Ponta Aguda",
+      "localidade": "Blumenau",
+      "estado": "SC",
+      "numero": "799"
     },
     {
       "nome": "Gabriel Noah Costa",
@@ -41,8 +50,11 @@
       "email": "gabriel.noah.costa@tedde.com.br",
       "senha": "ozE6L5luih",
       "cep": "76812-320",
-      "numero": "297",
-      "id": "fa45"
+      "logradouro": "Rua Walter Walterberg",
+      "bairro": "Lagoa",
+      "localidade": "Porto Velho",
+      "estado": "RO",
+      "numero": "297"
     },
     {
       "nome": "Pedro Henrique Marcos Vinicius Santos",
@@ -52,49 +64,37 @@
       "email": "pedro-santos70@ceuazul.ind.br",
       "senha": "n9XCFEI9zW",
       "cep": "44020-593",
-      "numero": "534",
-      "id": "e6ff"
+      "logradouro": "Rua da Liberdade",
+      "bairro": "Baraúna",
+      "localidade": "Feira de Santana",
+      "estado": "BA",
+      "numero": "534"
     }
   ],
   "locais": [
     {
       "nlocal": "Trilha do macaco",
-      "idusuario": "81d7",
+      "idusuario": "1234",
       "descricao": "Lindo lugar para fazer trilhas",
-      "cep": "88215-000",
-      "logradouro": "Rua Merluza",
-      "bairro": "Centro",
-      "localidade": "Bombinhas",
-      "estado": "SC",
+      "cep": "https://viacep.com.br/ws/88215000/json/",
       "coordenadas": "-27.17790080045851, -48.499666977182656",
-      "tipoesporte": "trilha",
-      "id": "6426"
+      "tipoesporte": "trilha"
     },
     {
       "nlocal": "Praia do rosa",
-      "idusuario": "6871",
+      "idusuario": "1234",
       "descricao": "Belo mar, ondas calmas, perfeito para natação ao ar livre",
-      "cep": "88780-000",
-      "logradouro": "Rua São Sebastião",
-      "bairro": "Vila Santo Antônio",
-      "localidade": "Imbituba",
-      "estado": "SC",
+      "cep": "https://viacep.com.br/ws/88780-000/json/",
       "coordenadas": "-28.093553838175584, -48.63090678458072",
-      "tipoesporte": "natação",
-      "id": "ab00"
+      "tipoesporte": "natação"
     },
     {
       "nlocal": "Beira-mar norte",
-      "idusuario": "1826",
+      "idusuario": "1234",
       "descricao": "Ótimo lugar para caminhadas e outros esportes",
-      "cep": "88015-702",
-      "logradouro": "Avenida Jornalista Rubens de Arruda Ramos",
-      "bairro": "Centro",
-      "localidade": "Florianópolis",
-      "estado": "SC",
+      "cep": "https://viacep.com.br/ws/88015-702/json/",
       "coordenadas": "-27.56190094605664, -48.54074909040275",
-      "tipoesporte": "caminhada",
-      "id": "787f"
+      "tipoesporte": "caminhada"
     }
   ]
 }

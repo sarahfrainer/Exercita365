@@ -9,6 +9,8 @@ export default function Cadastro() {
     const { register,
         handleSubmit,
         formState: { errors },
+        setValue, 
+        getValues,
         reset
     } = useForm();
 
@@ -43,6 +45,25 @@ export default function Cadastro() {
                 }
             })
             .catch(error => console.error("Erro:", error));}
+
+    
+    const buscarCep = () => {
+        debugger
+        let cep = getValues('cep')
+
+        if (!!cep && cep.length == 8) {
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                .then((res) => res.json())
+                .then(dados => {
+                    debugger
+                    setValue('bairro', dados.bairro)
+                    setValue('logradouro', dados.logradouro)
+                    setValue('estado', dados.uf)
+                    setValue('localidade', dados.localidade)
+                })
+                .catch(error => console.log(error))
+        }
+    }
 
     return (
         <>
@@ -158,18 +179,52 @@ export default function Cadastro() {
                         type="text"
                         id="cep"
                         placeholder="Digite seu CEP"
-                        {...register("cep", { 
+                        {...register("cep", 
+                        { 
                             required: "Por favor, insira o seu CEP",
+                            onBlur: () => buscarCep(),
                                 maxLength: {
                                 value: 8,
                                 message: "Máximo de 8 caracteres permitido" },
                                 minLength: {
                                     value: 8,
                                     message: "Minimo de 8 caracteres permitido" }})}
-                        onChange={(evento) => setNovoUsuario({ ...novoUsuario, cep: evento.target.value })}
                     /> 
                      {errors.cep && <p>{errors.cep.message}</p>}
                     <br />
+                </div>
+
+                <div>
+                <label htmlFor="logradouro" id={styles.logradouro1}>Logradouro:</label> <br />
+                <input type="text" className={styles.logradouro2} id={styles.logradouro2} placeholder="digite o logradouro" 
+                {...register("logradouro")}
+                onChange={(evento) => setNovoUsuario({ ...novoUsuario, logradouro: evento.target.value })}
+                 /><br />
+                
+                </div>
+
+                <div>
+                <label htmlFor="bairro" id={styles.bairro1}>Bairro:</label> <br />
+                <input type="text" className={styles.bairro2} id={styles.bairro2} placeholder="digite o bairro" 
+                {...register("bairro")} 
+                onChange={(evento) => setNovoUsuario({ ...novoUsuario, bairro: evento.target.value })}
+                /> <br />
+                </div>
+
+                <div>
+                <label htmlFor="localidade" id={styles.localidade1}>Localidade:</label> <br />
+                <input type="text" className={styles.localidade2} id={styles.localidade2} placeholder="digite a localidade" 
+                {...register("localidade")}
+                onChange={(evento) => setNovoUsuario({ ...novoUsuario, localidade: evento.target.value })}
+                 /> <br />
+                </div>
+
+                <div>
+                <label htmlFor="estado" id={styles.estado1}>Estado:</label> <br />
+                <input type="text" className={styles.estado2} id={styles.estado2} placeholder="digite o estado" 
+                {...register("estado")} 
+                onChange={(evento) => setNovoUsuario({ ...novoUsuario, estado: evento.target.value })}
+                /><br />
                 </div>
 
                 <div>
