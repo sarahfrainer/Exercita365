@@ -31,6 +31,25 @@ export default function Cadastro() {
 
     }
 
+    
+    const buscarCep = () => {
+        debugger
+        let cep = getValues('cep')
+
+        if (!!cep && cep.length == 8) {
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                .then((res) => res.json())
+                .then(dados => {
+                    debugger
+                    setValue('bairro', dados.bairro)
+                    setValue('logradouro', dados.logradouro)
+                    setValue('estado', dados.uf)
+                    setValue('localidade', dados.localidade)
+                })
+                .catch(error => console.log(error))
+        }
+    }
+
     return (
         <>
             <form className={styles.formulario} onSubmit={handleSubmit((onSubmit))}>
