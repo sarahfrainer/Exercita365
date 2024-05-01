@@ -24,6 +24,8 @@
     height: 480px;
     display: flex;
     flex-direction: column;
+    background-color: white;
+    background-blend-mode: soft-light;
 
   }
 

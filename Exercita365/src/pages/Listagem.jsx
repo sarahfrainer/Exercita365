@@ -26,7 +26,7 @@ export default function Listagem () {
       </div>
       {locais.map((local, index) => {
         return (
-          <Card key={index} className={styles.MuiCard-root}>
+          <Card key={index} style={{ backgroundColor: 'transparent', margin: '20px' }}>
             <CardContent>
               <div className={styles.container}>
                 <div className={styles.texto}>

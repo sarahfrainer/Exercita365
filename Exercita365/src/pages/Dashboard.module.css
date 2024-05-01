@@ -40,10 +40,6 @@
     align-items: center;
   }
 
-  .MuiCard-root {
-    background-color: none;
-  }
-  
   
   .container {
     display: flex;
@@ -53,7 +49,8 @@
     flex-wrap: wrap;
     font-size: 12px;
     margin: 20px 0px 20px 0px;
-  
+    background-color: white;
+    background-blend-mode: soft-light;
   }
   
   
@@ -62,19 +59,19 @@
     flex-direction: column;
     box-shadow: .2em .2em .8em black;
     width: 600px;
-    height: 250px;
+    height: 400px;
   }
   
   
   
-  .nlocal, .idusuario, .descricao, .cep, .coordenadas, .tipoesporte {
+  .nlocal, .idusuario, .descricao, .cep, .coordenadas, .tipoesporte, .logradouro, .bairro, .localidade, .estado {
     margin: 10px;
   }
   
   .nlocal {
     justify-self: center;
     align-self: center;
-    font-size: 12px;
+    font-size: 20px;
     color:rgb(63, 50, 4);
   }
   
@@ -92,16 +89,38 @@
   
   .cep {
     align-self: self-start;
-    color:rgb(192, 158, 45);
   }
   
   .coordenadas {
     align-self: self-start;
     color:rgb(63, 50, 4);
   }
+
+  .bairro {
+    align-self: self-start;
+    color:rgb(63, 50, 4);
+  }
   
+
+  .localidade {
+    align-self: self-start;
+    color:rgb(63, 50, 4);
+  }
+  
+
+  .estado {
+    align-self: self-start;
+    color:rgb(63, 50, 4);
+  }
+  
+  .logradouro {
+    align-self: self-start;
+    color:rgb(63, 50, 4);
+  }
+    
   
   .tipoesporte {
     align-self: self-start;
     color:rgb(63, 50, 4);
+    color:rgb(192, 158, 45);
   }

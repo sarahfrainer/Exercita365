@@ -25,7 +25,7 @@ export default function Dashboard () {
       </div>
       {locais.map((local, index) => {
         return (
-          <Card key={index}>
+          <Card key={index} style={{ backgroundColor: 'transparent', margin: '20px' }}>
             <CardContent>
               <div className={styles.container}>
                 <div className={styles.texto}>
@@ -33,6 +33,10 @@ export default function Dashboard () {
                   <h3 className={styles.idusuario}>Id usuário: {local.idusuario}</h3>
                   <p className={styles.descricao}>Descrição: {local.descricao}</p>
                   <p className={styles.cep}>CEP: {local.cep}</p>
+                  <p className={styles.logradouro}>Logradouro: {local.logradouro}</p>
+                  <p className={styles.bairro}>Bairro: {local.bairro}</p>
+                  <p className={styles.localidade}>Cidade: {local.localidade}</p>
+                  <p className={styles.estado}>Estado: {local.estado}</p>
                   <p className={styles.coordenadas}>Coordenadas: {local.coordenadas}</p>
                   <div className={styles.tipoesporte}>Tipo de esporte: {local.tipoesporte}</div>
                 </div>
