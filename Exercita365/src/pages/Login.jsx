@@ -23,7 +23,7 @@ export default function Login() {
         <h1 className={styles.titulo1}>Faça login,</h1>
         <h2 className={styles.titulo2}>descubra lugares incríveis</h2>
         <form className={styles.form}>
-          <label htmlFor='email' className={styles.email}>Email:</label>
+          <label htmlFor='email' className={styles.email}>Email: <br /></label>
                  <input
                     type='email'
                     id='email'
@@ -33,7 +33,7 @@ export default function Login() {
                     required
                     placeholder='digite seu e-mail'
         /><br />
-        <label htmlFor='senha' className={styles.senha}>Senha:</label>
+        <label htmlFor='senha' className={styles.senha}>Senha: <br /></label>
             <input
                     type='password'
                     id='senha'

@@ -1,17 +1,153 @@
-.formulario {
+body {
+    font-family: "Roboto", sans-serif;
     background: linear-gradient(45deg, #1A4D2E, #4F6F52, #E8DFCA, #F5EFE6);
     animation: colors 10s ease infinite alternate;
-  }
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 600px;
+}
 
-  @keyframes colors {
+@keyframes colors {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%
     }
+
     100% {
         background-position: 0% 50%;
     }
-  }
+}
 
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: #2b070f;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+}
+
+.nome,
+.sexo,
+.cpf,
+.nascimento,
+.email,
+.senha,
+.cep,
+.numero,
+.cadastrar {
+    margin: 10px;
+    margin-left: 0px;
+}
+
+#nome,
+#cpf,
+#nascimento,
+#email,
+#senha,
+#cep,
+#numero,
+#cadastrar {
+    color: white;
+    margin-left: 0;
+    align-content:baseline;
+    justify-content:left;
+    width: 250px;
+    height: 20px;
+}
+
+.nome {
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: medium;
+    justify-self: center;
+}
+
+.sexo {
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: medium;
+    margin-right: 100px;
+}
+
+.cpf {
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.nascimento {
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.numero {
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.cep {
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.email {
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.senha {
+    margin-right: 10px;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.cadastrar {
+    justify-self: center;
+    align-self: center;
+    margin-left: 0px;
+    border-radius: 10px;
+    padding: 10px;
+    padding-left: 20px;
+    margin: 20px;
+    padding-right: 20px;
+    font-size: medium;
+    background-color: #1A4D2E;
+    color: #F5EFE6;
+    margin-top: 20px;
+}
+
+.cadastrar:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.login {
+    color: #2b070f;
+    margin: 20px;
+    margin-right: 20px; 
+    
+}
+
+.titulo {
+    margin-bottom: 30px;
+   justify-content: right;
+}
