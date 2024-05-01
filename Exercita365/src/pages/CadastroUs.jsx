@@ -48,14 +48,13 @@ export default function Cadastro() {
 
     
     const buscarCep = () => {
-        debugger
         let cep = getValues('cep')
 
         if (!!cep && cep.length == 8) {
             fetch(`https://viacep.com.br/ws/${cep}/json/`)
                 .then((res) => res.json())
                 .then(dados => {
-                    debugger
+
                     setValue('bairro', dados.bairro)
                     setValue('logradouro', dados.logradouro)
                     setValue('estado', dados.uf)

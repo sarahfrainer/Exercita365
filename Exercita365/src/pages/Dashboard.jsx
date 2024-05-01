@@ -2,13 +2,20 @@ import { Card, CardActions, CardContent, CardHeader } from "@mui/material";
 import { LocaisContext } from "../context/LocaisContext";
 import { useContext } from "react";
 import styles from "./Dashboard.module.css"
+import { useEffect, useState } from "react";
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { UserContext } from "../context/UserContext";
 
 export default function Dashboard () {
 
   const { locais, adicionarLocal, setLocais } = useContext(LocaisContext);
+
+  const { userOnline } = useContext(UserContext);
+
+  
+
 
   return (
     <div>
@@ -20,6 +27,11 @@ export default function Dashboard () {
       <div className={styles.paragrafo1}>
       <p>Explore locais cadastrados, envie as suas próprias sugestões e se exercite!</p>
       </div>
+      <Card>
+        <CardContent>
+          <div>Número de usuários online: {userOnline}</div>
+        </CardContent>
+      </Card>
       <div className={styles.paragrafo2}>
       <p>Confira os locais já cadastrados:</p>
       </div>

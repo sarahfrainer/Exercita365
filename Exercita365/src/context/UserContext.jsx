@@ -17,9 +17,31 @@ export const UserContextProvider = ({ children }) => {
             .catch(erro => console.log(erro));
     }
 
+
+    const [userOnline, setUserOnline] = useState(0);
+
+    useEffect(() => {
+        lerUsuarios();
+
+        const handleStorageChange = () => {
+            console.log('Storage change detected');
+            const isOnline = localStorage.getItem('isOnline');
+            console.log('isOnline:', isOnline);
+            if (isOnline === 'true') {
+                setUserOnline((prevCount) => prevCount + 1);
+            }
+        };
+
+        window.addEventListener('storage', handleStorageChange);
+
+        return () => {
+            window.removeEventListener('storage', handleStorageChange);
+        };
+    }, []);
+
+
     async function buscarUsuario(email, senha) {
         try {
-            debugger
             const response = await fetch("http://localhost:3000/users");
             const dados = await response.json();
 
@@ -29,20 +51,25 @@ export const UserContextProvider = ({ children }) => {
                 debugger
                 if (user.email == email) {
                     userVerific = true;
-               
-                if (user.senha == senha) {
-                    localStorage.setItem("isAutenticado", true)
-                    window.location.href = "/"
-                    return
-                    // salvo id no localStorage
-                    // salvo que ele está autenticado localStorage
-                    // redireciona para o dashboard
-                }
+
+                    if (user.senha == senha) {
+                        localStorage.setItem("isAutenticado", true)
+                        localStorage.setItem("isOnline", true)
+
+                        window.location.href = "/"
+                        handleStorageChange();
+                        
+
+                        return
+                        // salvo id no localStorage
+                        // salvo que ele está autenticado localStorage
+                        // redireciona para o dashboard
+                    }
                     alert("Senha incorreta!");
                     return;
                 }
             });
-            
+
 
 
             if (!userVerific) {
@@ -54,18 +81,18 @@ export const UserContextProvider = ({ children }) => {
         }
     }
 
-  
-        function deslog () {
-            localStorage.removeItem("isAutenticado")
-            window.location.href = "/login"
-        }
+    function deslog() {
+        localStorage.removeItem("isAutenticado")
+        window.location.href = "/login"
+        localStorage.removeItem("isOnline")
+    }
 
     async function lerUsuarioPorId(id) {
         fetch("http://localhost:3000/users/" + id)
-        .then(response => response.json())
-        .then(dados => setUser(dados))
-        .catch(erro => console.log(erro))
-      
+            .then(response => response.json())
+            .then(dados => setUser(dados))
+            .catch(erro => console.log(erro))
+
     }
 
     function cadastrarUsuario(novoUsuario) {
@@ -78,7 +105,7 @@ export const UserContextProvider = ({ children }) => {
         })
             .then(() => {
                 alert("Usuario adicionado com sucesso!");
-                lerUsuarios();                
+                lerUsuarios();
             })
             .catch(() => alert("Erro ao adicionar o usuário!"));
 
@@ -87,7 +114,7 @@ export const UserContextProvider = ({ children }) => {
 
 
     return (
-        <UserContext.Provider value={{ user, lerUsuarios, cadastrarUsuario, lerUsuarioPorId, buscarUsuario, deslog}}>
+        <UserContext.Provider value={{ user, lerUsuarios, cadastrarUsuario, lerUsuarioPorId, buscarUsuario, deslog, userOnline }}>
             {children}
         </UserContext.Provider>
     );
