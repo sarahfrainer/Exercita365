@@ -1,0 +1,79 @@
+body {
+    font-family: "Roboto", sans-serif;
+    background: linear-gradient(45deg, #1A4D2E, #4F6F52, #E8DFCA, #F5EFE6);
+    animation: colors 10s ease infinite alternate;
+    background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 550px;
+}
+
+@keyframes colors {
+0% {
+    background-position: 0% 50%;
+}
+50% {
+    background-position: 100% 50%
+}
+100% {
+    background-position: 0% 50%;
+}}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 150px;
+    color: #2b070f;
+}
+
+.titulo1, .titulo2, .email, .senha, .login, .paragrafo, .cadastro {
+    margin: 15px;
+}
+
+.email {
+    margin-left: 0px;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.senha {
+    margin-left: 0px;
+    margin-right: 10px;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.login {
+    justify-self: center;
+    align-self: center;
+    margin-left: 90px;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: medium;
+    background-color: #1A4D2E;
+    color: #F5EFE6;
+}
+
+.login:hover {
+    text-decoration: underline;
+    cursor: pointer;
+        transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.titulo2 {
+    margin-bottom: 50px;
+}
+
+#titulo1 {
+    margin-bottom: 0px;
+}
+
+.cadastro {
+    color: #2b070f;
+}
