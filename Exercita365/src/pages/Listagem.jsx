@@ -26,7 +26,7 @@ export default function Listagem () {
       </div>
       {locais.map((local, index) => {
         return (
-          <Card key={index}>
+          <Card key={index} className={styles.MuiCard-root}>
             <CardContent>
               <div className={styles.container}>
                 <div className={styles.texto}>
@@ -34,12 +34,18 @@ export default function Listagem () {
                   <h3 className={styles.idusuario}>Id usuário: {local.idusuario}</h3>
                   <p className={styles.descricao}>Descrição: {local.descricao}</p>
                   <p className={styles.cep}>CEP: {local.cep}</p>
+                  <p className={styles.logradouro}>Logradouro: {local.logradouro}</p>
+                  <p className={styles.bairro}>Bairro: {local.bairro}</p>
+                  <p className={styles.localidade}>Cidade: {local.localidade}</p>
+                  <p className={styles.estado}>Estado: {local.estado}</p>
                   <p className={styles.coordenadas}>Coordenadas: {local.coordenadas}</p>
                   <div className={styles.tipoesporte}>Tipo de esporte: {local.tipoesporte}</div>
                 </div>
-              </div>
+                <div className={styles.botoes}>
               <Link to= {`/cadastro-local-exercicio?id=${local.id}`} className= {styles.login}>Editar local</Link>
-              <button onClick={() => handleDelete(local.id)}>Exclua local</button>
+              <button className= {styles.excluir} onClick={() => handleDelete(local.id)}>Exclua local</button>
+              </div>
+              </div>
             </CardContent>
           </Card>
         )
