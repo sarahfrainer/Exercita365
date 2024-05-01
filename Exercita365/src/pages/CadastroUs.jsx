@@ -9,6 +9,8 @@ export default function Cadastro() {
     const { register,
         handleSubmit,
         formState: { errors },
+        setValue, 
+        getValues,
         reset
     } = useForm();
 
@@ -164,15 +166,16 @@ export default function Cadastro() {
                         type="text"
                         id="cep"
                         placeholder="Digite seu CEP"
-                        {...register("cep", { 
+                        {...register("cep", 
+                        { 
                             required: "Por favor, insira o seu CEP",
+                            onBlur: () => buscarCep(),
                                 maxLength: {
                                 value: 8,
                                 message: "Máximo de 8 caracteres permitido" },
                                 minLength: {
                                     value: 8,
                                     message: "Minimo de 8 caracteres permitido" }})}
-                        onChange={(evento) => setNovoUsuario({ ...novoUsuario, cep: evento.target.value })}
                     /> 
                      {errors.cep && <p>{errors.cep.message}</p>}
                     <br />
