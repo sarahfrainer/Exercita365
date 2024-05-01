@@ -8,6 +8,10 @@
       "email": "kaue@email.com",
       "senha": "1234",
       "cep": "37004-300",
+      "logradouro": "Rua Francisca Bernardes Nogueira",
+      "bairro": "Vila Belmiro",
+      "localidade": "Varginha",
+      "estado": "MG",
       "numero": "100"
     },
     {
@@ -18,6 +22,10 @@
       "email": "vera_ferreira@betti.com.br",
       "senha": "4phi86OBgn",
       "cep": "13098-613",
+      "logradouro": "Rua Leopoldo Landin Júnior",
+      "bairro": "Parque Xangrilá",
+      "localidade": "Campinas",
+      "estado": "SP",
       "numero": "300"
     },
     {
@@ -28,6 +36,10 @@
       "email": "emanuellyeduardagalvao@predilectasorocaba.com.br",
       "senha": "dh55UmxRLo",
       "cep": "89050-340",
+      "logradouro": "Rua Honduras",
+      "bairro": "Ponta Aguda",
+      "localidade": "Blumenau",
+      "estado": "SC",
       "numero": "799"
     },
     {
@@ -38,6 +50,10 @@
       "email": "gabriel.noah.costa@tedde.com.br",
       "senha": "ozE6L5luih",
       "cep": "76812-320",
+      "logradouro": "Rua Walter Walterberg",
+      "bairro": "Lagoa",
+      "localidade": "Porto Velho",
+      "estado": "RO",
       "numero": "297"
     },
     {
@@ -48,8 +64,13 @@
       "email": "pedro-santos70@ceuazul.ind.br",
       "senha": "n9XCFEI9zW",
       "cep": "44020-593",
+      "logradouro": "Rua da Liberdade",
+      "bairro": "Baraúna",
+      "localidade": "Feira de Santana",
+      "estado": "BA",
       "numero": "534"
-    }],
+    }
+  ],
   "locais": [
     {
       "nlocal": "Trilha do macaco",
@@ -58,22 +79,22 @@
       "cep": "https://viacep.com.br/ws/88215000/json/",
       "coordenadas": "-27.17790080045851, -48.499666977182656",
       "tipoesporte": "trilha"
-  },
-  {
+    },
+    {
       "nlocal": "Praia do rosa",
       "idusuario": "1234",
       "descricao": "Belo mar, ondas calmas, perfeito para natação ao ar livre",
       "cep": "https://viacep.com.br/ws/88780-000/json/",
       "coordenadas": "-28.093553838175584, -48.63090678458072",
       "tipoesporte": "natação"
-  },
-  {
+    },
+    {
       "nlocal": "Beira-mar norte",
       "idusuario": "1234",
       "descricao": "Ótimo lugar para caminhadas e outros esportes",
       "cep": "https://viacep.com.br/ws/88015-702/json/",
       "coordenadas": "-27.56190094605664, -48.54074909040275",
       "tipoesporte": "caminhada"
-  }
-  ]
     }
+  ]
+}

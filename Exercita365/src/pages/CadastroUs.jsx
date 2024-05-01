@@ -160,6 +160,39 @@ export default function Cadastro() {
                 </div>
 
                 <div>
+                <label htmlFor="logradouro" id={styles.logradouro1}>Logradouro:</label> <br />
+                <input type="text" className={styles.logradouro2} id={styles.logradouro2} placeholder="digite o logradouro" 
+                {...register("logradouro")}
+                onChange={(evento) => setNovoUsuario({ ...novoUsuario, logradouro: evento.target.value })}
+                 /><br />
+                
+                </div>
+
+                <div>
+                <label htmlFor="bairro" id={styles.bairro1}>Bairro:</label> <br />
+                <input type="text" className={styles.bairro2} id={styles.bairro2} placeholder="digite o bairro" 
+                {...register("bairro")} 
+                onChange={(evento) => setNovoUsuario({ ...novoUsuario, bairro: evento.target.value })}
+                /> <br />
+                </div>
+
+                <div>
+                <label htmlFor="localidade" id={styles.localidade1}>Localidade:</label> <br />
+                <input type="text" className={styles.localidade2} id={styles.localidade2} placeholder="digite a localidade" 
+                {...register("localidade")}
+                onChange={(evento) => setNovoUsuario({ ...novoUsuario, localidade: evento.target.value })}
+                 /> <br />
+                </div>
+
+                <div>
+                <label htmlFor="estado" id={styles.estado1}>Estado:</label> <br />
+                <input type="text" className={styles.estado2} id={styles.estado2} placeholder="digite o estado" 
+                {...register("estado")} 
+                onChange={(evento) => setNovoUsuario({ ...novoUsuario, estado: evento.target.value })}
+                /><br />
+                </div>
+
+                <div>
                     <label htmlFor="numero" id={styles.numero}>Número da residência e complemento:</label> <br />
                     <input
                         type="text"
