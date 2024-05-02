@@ -13,9 +13,6 @@ export default function Dashboard () {
   const { locais, adicionarLocal, setLocais } = useContext(LocaisContext);
 
 
-  
-
-
   return (
     <div>
     <Navbar />

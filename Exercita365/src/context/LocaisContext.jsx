@@ -41,6 +41,8 @@ export const LocaisContextProvider = ({children}) => {
 
     } 
 
+    
+
     function editarLocal(local, id){    
         fetch("http://localhost:3000/locais/" + id, {
           method: "PUT",
@@ -57,26 +59,6 @@ export const LocaisContextProvider = ({children}) => {
       }
 
 
-      function preencherForm (id) {
-        fetch(`"http://localhost:3000/locais/" + id`)
-            .then((res) => res.json())
-            .then(dados => {
-                debugger
-                setValue('nlocal', dados.nlocal)
-                setValue('idusuario', dados.idusuario)
-                setValue('descricao', dados.descricao)
-                setValue('cep', dados.cep)
-                setValue('bairro', dados.bairro)
-                setValue('logradouro', dados.logradouro)
-                setValue('estado', dados.uf)
-                setValue('localidade', dados.localidade)
-                setValue('coordenadas', dados.coordenadas)
-                setValue('tipoesporte', dados.tipoesporte)
-            })
-            .catch(error => console.log(error))
-    }
-    
-
       function removerLocal(id){
         fetch("http://localhost:3000/locais/" + id, {
           method: "DELETE",
@@ -89,7 +71,7 @@ export const LocaisContextProvider = ({children}) => {
       }
 
     return (
-        <LocaisContext.Provider value={{lerLocais, locais, setLocais, cadastrarLocal, editarLocal, removerLocal, lerLocaisPorId, preencherForm}}>
+        <LocaisContext.Provider value={{lerLocais, locais, setLocais, cadastrarLocal, editarLocal, removerLocal, lerLocaisPorId}}>
             {children}
         </LocaisContext.Provider>
     )

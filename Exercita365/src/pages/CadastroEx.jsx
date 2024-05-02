@@ -2,7 +2,7 @@ import styles from "./CadastroEx.module.css"
 import * as React from "react";
 import { useForm } from "react-hook-form"
 import { LocaisContext } from "../context/LocaisContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -27,7 +27,6 @@ function CadastroEx() {
     console.log(errors);
 
     const buscarCep = () => {
-        debugger
         let cep = getValues('cep')
 
         if (!!cep && cep.length == 8) {
@@ -42,6 +41,43 @@ function CadastroEx() {
                 })
                 .catch(error => console.log(error))
         }
+    }
+
+    function preencherForm (id) {
+        fetch(`http://localhost:3000/locais/${id}`)
+            .then((res) => res.json())
+            .then(dados => {
+                debugger
+                setValue('nlocal', dados.nlocal)
+                setValue('idusuario', dados.idusuario)
+                setValue('descricao', dados.descricao)
+                setValue('cep', dados.cep)
+                setValue('bairro', dados.bairro)
+                setValue('logradouro', dados.logradouro)
+                setValue('estado', dados.estado)
+                setValue('localidade', dados.localidade)
+                setValue('coordenadas', dados.coordenadas)
+                setValue('tipoesporte', dados.tipoesporte)
+            })
+            .catch(error => console.log(error))
+    }
+
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+    
+        if (id && preencherForm) {
+            preencherForm(id);
+        }
+    }, []);
+
+
+    const salvar = () => {
+        const dados = getValues(); 
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+
+        editarLocal(dados, id);
     }
 
     return (
@@ -167,7 +203,11 @@ function CadastroEx() {
                     <input className={styles.cadastro} id={styles.cadastro} type="submit" value="Cadastrar"></input>
                 </div>
 
-            </form>
+                <button className={styles.editar} id={styles.editar} onClick={salvar}>Editar</button>
+            
+                     </form>
+
+                   
             <Footer />
 
         </div>

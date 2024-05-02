@@ -17,6 +17,10 @@ export default function Listagem () {
     removerLocal(id);
   };
 
+  const handleEdit = (id) => {
+    window.location.href = `/cadastro-local-exercicio?id=${id}`;
+  }
+
   return (
     <div>
         <Navbar />
@@ -42,7 +46,7 @@ export default function Listagem () {
                   <div className={styles.tipoesporte}>Tipo de esporte: {local.tipoesporte}</div>
                 </div>
                 <div className={styles.botoes}>
-              <Link to= {`/cadastro-local-exercicio?id=${local.id}`} className= {styles.login}>Editar local</Link>
+              <button onClick={() => handleEdit(local.id)} className= {styles.login}>Editar local</button>
               <button className= {styles.excluir} onClick={() => handleDelete(local.id)}>Exclua local</button>
               </div>
               </div>

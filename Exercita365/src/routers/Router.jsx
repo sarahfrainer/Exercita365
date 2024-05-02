@@ -8,11 +8,14 @@ import Listagem from "../pages/Listagem";
 import App from "../App"
 import CadastroUs from "../pages/CadastroUs"
 
+
 let isAutenticado = JSON.parse(localStorage.getItem("isAutenticado")) || false;
+
 
 const PrivateRoute = ({children}) => {
     return isAutenticado ? children : <Navigate to="/login" />
 }
+
 
 const Router = createBrowserRouter ([
     {
