@@ -18,7 +18,7 @@ export default function Dashboard () {
     <Navbar />
     <div className={styles.geral}>
       <div className={styles.tituloPagina}>
-        <h1>Explore locais e mantenha a saúde em dia</h1>
+        <h1>EXPLOREfit</h1>
       </div>
       <div className={styles.paragrafo1}>
       <p>Explore locais cadastrados, envie as suas próprias sugestões e se exercite!</p>
