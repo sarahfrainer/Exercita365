@@ -98,6 +98,8 @@ Melhorias que poderiam ter sido aplicadas ao projeto:
 2. Desenvolvimento de uma página pessoal do usuário, onde ele poderia alterar as informações de sua conta ou até mesmo apagá-la;
 3. Utilização de um mapa para demonstração dinâmica dos locais;
 4. Restrição de usuários que podem editar a trilha, para que essa função se tornasse disponível apenas para o criador.
+5. Implementação de ferramenta para mostrar usuários online na página inicial.
+6. Filtro para evitar que fossem cadastrados locais repetidos.
 
 
 ## Desenvolvimento
