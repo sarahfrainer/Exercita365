@@ -6,8 +6,6 @@
 
 - [Funcionalidades](#funcionalidades)
 
-- [Aplicação](#aplicação)
-
 - [Ferramentas utilizadas](#ferramentas-utilizadas)
 
 - [Instalação e execução](#instalação-e-execução-do-projeto)
@@ -24,9 +22,6 @@ EXPLOREfit é um site desenvolvido para reunir informações sobre locais de exe
 Em resumo, o EXPLOREfit pretende incentivar e facilitar o contato com a natureza e a vida saudável, reunindo dicas interessantes.
 
 O site conta com rotas privadas, utilizando a página de login e cadastro de usuário como iniciais. A partir da validação das informações, que são armanezadas no localStorage, é oferecido acesso às página: inicial/dashboard, cadastro de locais e listagem das opções.
-
-## Demonstração de uso
-
 
 
 ## Funcionalidades
@@ -105,6 +100,6 @@ Melhorias que poderiam ter sido aplicadas ao projeto:
 4. Restrição de usuários que podem editar a trilha, para que essa função se tornasse disponível apenas para o criador.
 
 
-## Instalação e execução do projeto
+## Desenvolvimento
 
 Projeto desenvolvido por Sarah Beatriz Frainer, como trabalho final do módulo Front-End do curso "FuturoDev", do Sesi-SENAI.

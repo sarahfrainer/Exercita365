@@ -69,6 +69,21 @@
       "localidade": "Feira de Santana",
       "estado": "BA",
       "numero": "534"
+    },
+    {
+      "id": "628c",
+      "nome": "ushuhsh",
+      "sexo": "feminino",
+      "cpf": "11111111111",
+      "nascimento": "21000000",
+      "email": "teste@email.com",
+      "senha": "teste",
+      "cep": "37004300",
+      "logradouro": "Rua Francisca Bernardes Nogueira",
+      "bairro": "Vila Belmiro",
+      "localidade": "Varginha",
+      "estado": "MG",
+      "numero": "nshuhs"
     }
   ],
   "locais": [
