@@ -35,14 +35,20 @@ body {
     "localidade2 estado2"
     "tipoesporte1 tipoesporte1"
     "tipoesporte2 tipoDeTrilha2"
-    "cadastroContainer cadastroContainer";
+    "cadastroContainer editar";
     justify-items:stretch;
-    padding: 30px;
     align-items: center;
     width: 600px;
     height: 650px;
     margin-left: 430px;
+    margin-top: 50px;
+    margin-bottom: 0xp;
     grid-template-columns: repeat(2, auto); 
+}
+
+.geral {
+    display: flex;
+    flex-direction: column;
 }
 
 #titulo {
@@ -177,26 +183,24 @@ body {
     color: white;
     height: 30px;
     width: 90px;
-    justify-self: start;
+    margin-bottom: 80px;
 }
 
 #editar {
+    grid-area: editar;
     padding: 5px;
     background: none;
     height: 30px;
     width: 90px;
-    justify-self: start;
-    margin-left: 30px;
+    margin: 0px;
+    margin-left: 440px;
+    margin-bottom: 80px;
 }
 
 #cadastroContainer {
     grid-area: cadastroContainer;
     margin: 0px;
-    display: flex;
-    justify-content: flex-start;
     margin-left: 10px;
-    margin-bottom: 100px;
-   
 }
 
 #cadastro:hover {

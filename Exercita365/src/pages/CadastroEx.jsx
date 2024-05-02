@@ -83,7 +83,8 @@ function CadastroEx() {
     return (
         <div>
             <Navbar />
-            <form className={styles.formulario} onSubmit={handleSubmit((onSubmit))}>
+            <div  className={styles.geral}>
+            <form  className={styles.formulario} onSubmit={handleSubmit((onSubmit))}>
 
                 <h1 className={styles.titulo} id={styles.titulo}>Cadastro de novo local de exercício</h1>
 
@@ -201,12 +202,16 @@ function CadastroEx() {
 
                 <div id={styles.cadastroContainer}>
                     <input className={styles.cadastro} id={styles.cadastro} type="submit" value="Cadastrar"></input>
-                    <button className={styles.editar} id={styles.editar} onClick={salvar}>Editar</button>
                 </div>
 
                 
             
                      </form>
+
+                     <button className={styles.editar} id={styles.editar} onClick={salvar}>Editar</button>
+
+                     </div>
+                    
 
                    
             <Footer />
