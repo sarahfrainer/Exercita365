@@ -12,7 +12,6 @@ export default function Dashboard () {
 
   const { locais, adicionarLocal, setLocais } = useContext(LocaisContext);
 
-  const { userOnline } = useContext(UserContext);
 
   
 
@@ -27,11 +26,11 @@ export default function Dashboard () {
       <div className={styles.paragrafo1}>
       <p>Explore locais cadastrados, envie as suas próprias sugestões e se exercite!</p>
       </div>
-      <Card>
+      {/* <Card>
         <CardContent>
           <div>Número de usuários online: {userOnline}</div>
         </CardContent>
-      </Card>
+      </Card> */}
       <div className={styles.paragrafo2}>
       <p>Confira os locais já cadastrados:</p>
       </div>

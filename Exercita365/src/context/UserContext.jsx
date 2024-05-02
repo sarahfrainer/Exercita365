@@ -18,26 +18,26 @@ export const UserContextProvider = ({ children }) => {
     }
 
 
-    const [userOnline, setUserOnline] = useState(0);
+    // const [userOnline, setUserOnline] = useState(0);
 
-    useEffect(() => {
-        lerUsuarios();
+    // useEffect(() => {
+    //     lerUsuarios();
 
-        const handleStorageChange = () => {
-            console.log('Storage change detected');
-            const isOnline = localStorage.getItem('isOnline');
-            console.log('isOnline:', isOnline);
-            if (isOnline === 'true') {
-                setUserOnline((prevCount) => prevCount + 1);
-            }
-        };
+    //     const mudançaStorage = () => {
+    //         console.log('Mudança detectada');
+    //         const isOnline = localStorage.getItem('isOnline');
+    //         console.log('isOnline:', isOnline);
+    //         if (isOnline === 'true') {
+    //             setUserOnline((prevCount) => prevCount + 1);
+    //         }
+    //     };
 
-        window.addEventListener('storage', handleStorageChange);
+    //     window.addEventListener('storage', handleStorageChange);
 
-        return () => {
-            window.removeEventListener('storage', handleStorageChange);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener('storage', handleStorageChange);
+    //     };
+    // }, []);
 
 
     async function buscarUsuario(email, senha) {
@@ -57,7 +57,6 @@ export const UserContextProvider = ({ children }) => {
                         localStorage.setItem("isOnline", true)
 
                         window.location.href = "/"
-                        handleStorageChange();
                         
 
                         return
@@ -114,7 +113,7 @@ export const UserContextProvider = ({ children }) => {
 
 
     return (
-        <UserContext.Provider value={{ user, lerUsuarios, cadastrarUsuario, lerUsuarioPorId, buscarUsuario, deslog, userOnline }}>
+        <UserContext.Provider value={{ user, lerUsuarios, cadastrarUsuario, lerUsuarioPorId, buscarUsuario, deslog }}>
             {children}
         </UserContext.Provider>
     );
